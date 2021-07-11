@@ -1,8 +1,12 @@
 :root {
     --primary-color: #1d5888;
     --secondary-color: #FFC371;
-    --dark-color: #292929;
+    --dark-color: #376489;
     --white-color: #dff3e4;
+}
+
+.logoFont {
+    font-family: 'Anton', sans-serif;
 }
 
 body {
@@ -64,7 +68,20 @@ footer .social>a:hover {
 /*  */
 
 .checklist>li i {
-    color: #E83A95;
+    color: #FF9400;
+}
+
+.Fizz {
+    color: darkgreen;
+}
+
+.Buzz {
+    color: darkblue;
+}
+
+.FizzBuzz {
+    color: red;
+    font-weight: bold;
 }
 
 /* Prism */
