@@ -76,3 +76,47 @@ function displayData(fbData) {
       tableBody.appendChild(tableRow);
    }
 }
+
+// Alternative methods of completing the fizzBuzz function.
+// Switch
+function fizzBuzzB(fizzValue, buzzValue) {
+   let returnArray = [];
+   let Fizz = false;
+   let Buzz = false;
+
+   for (let i = 1; i < 100; i++) {
+      Fizz = i % fizzValue == 0;
+      Buzz = i % buzzValue == 0;
+
+      switch (true) {
+         case Fizz && Buzz: {
+            returnArray.push('FizzBuzz');
+            break;
+         }
+         case Fizz: {
+            returnArray.push('Fizz');
+            break;
+         }
+         case Buzz: {
+            returnArray.push('Buzz');
+            break;
+         }
+         default:
+            returnArray.push(i);
+            break;
+      }
+   }
+  return returnArray;
+}
+
+//  Ternary Operators
+function fizzBuzzC(fizzValue, buzzValue) {
+   let returnArray = [];
+
+   for (let i = 1; i <= 100; i++) {
+      let value = ((i % fizzValue == 0 ? 'Fizz' : '') + (i % buzzValue == 0 ? 'Buzz' : '') || i);
+
+      returnArray.push(value);
+   }
+   return returnArray;
+}

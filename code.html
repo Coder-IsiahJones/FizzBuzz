@@ -51,7 +51,8 @@
                         <a class="nav-link active" aria-current="page" href="code.html">The Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="https://github.com/Coder-IsiahJones/FizzBuzz">Git Repo</a>
+                        <a class="nav-link" target="_blank" href="https://github.com/Coder-IsiahJones/FizzBuzz">Git
+                            Repo</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" target="_blank"
@@ -148,6 +149,50 @@
                                   tableBody.appendChild(tableRow);
                                }
                             }
+                            
+                            // Alternative methods of completing the fizzBuzz function.
+                            // Switch
+                            function fizzBuzzB(fizzValue, buzzValue) {
+                               let returnArray = [];
+                               let Fizz = false;
+                               let Buzz = false;
+                            
+                               for (let i = 1; i < 100; i++) {
+                                  Fizz = i % fizzValue == 0;
+                                  Buzz = i % buzzValue == 0;
+                            
+                                  switch (true) {
+                                     case Fizz && Buzz: {
+                                        returnArray.push('FizzBuzz');
+                                        break;
+                                     }
+                                     case Fizz: {
+                                        returnArray.push('Fizz');
+                                        break;
+                                     }
+                                     case Buzz: {
+                                        returnArray.push('Buzz');
+                                        break;
+                                     }
+                                     default:
+                                        returnArray.push(i);
+                                        break;
+                                  }
+                               }
+                              return returnArray;
+                            }
+                            
+                            //  Ternary Operators
+                            function fizzBuzzC(fizzValue, buzzValue) {
+                               let returnArray = [];
+                            
+                               for (let i = 1; i <= 100; i++) {
+                                  let value = ((i % fizzValue == 0 ? 'Fizz' : '') + (i % buzzValue == 0 ? 'Buzz' : '') || i);
+                            
+                                  returnArray.push(value);
+                               }
+                               return returnArray;
+                            }
                         </code>
                     </pre>
                 </div>
@@ -184,9 +229,23 @@
                         return the array and call the <strong>displayData</strong> function.
                     </p>
 
+                    <h4>Alternative Methods</h4>
+                    <p>
+                        There are many different ways of implementing the <strong>fizzBuzz</strong> function. I have
+                        also created two additional functions to show to different options of coding this function.
+                        <strong>fizzBuzzB</strong> uses a switch instead of if-statements which perform the same
+                        outcome.
+                        <strong>fizzBuzzC</strong> uses ternary operators to achieve the same outcome as well. Each have
+                        there different use of readability. To understand how to use these different functions you have
+                        to dive deep into understand boolean logic and how it can be used to you benefits.
+                    </p>
+
                     <h4>displayData</h4>
                     <p>
-                        These function is used to inject the html into a position we specify we want it to be. To make this robust a <strong>template</strong> was created and used. This template contains five empty table data cells. We can take a copy of these data cells and inject our className and content inside them. This is done by just iteration through an array of our data.
+                        These function is used to inject the html into a position we specify we want it to be. To make
+                        this robust a <strong>template</strong> was created and used. This template contains five empty
+                        table data cells. We can take a copy of these data cells and inject our className and content
+                        inside them. This is done by just iteration through an array of our data.
                     </p>
                 </div>
             </div>
